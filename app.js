@@ -113,3 +113,13 @@ app.get('/', (req, res) => {
 // app.listen(3000, () => {
 //     console.log(`> Ready on http://localhost:3000`);
 // });
+
+
+// npm install express --save
+// npm install @supabase/supabase-js
+// npm install cors
+// npm install morgan
+
+// rodar aplicação
+// node app.js
+
