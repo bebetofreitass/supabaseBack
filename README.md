@@ -84,8 +84,3 @@ Desenvolvimento de Software em Nuvem
 RA: [2422750]
 
 ---
-
-### Quer que eu crie esse arquivo real no seu projeto?
-Posso gerar o conteúdo direto para você salvar no seu projeto como `README.md`.
-
-Quer que eu faça isso agora? Se quiser, me diga o seu nome e RA para completar o rodapé.
