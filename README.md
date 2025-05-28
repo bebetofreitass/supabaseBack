@@ -67,7 +67,7 @@ Use o método correto e envie o JSON no corpo (para POST/PUT)```
 
 ---
 
-´´´bash
+```
 
 # Deploy Backend Node.js na AWS EC2
 
