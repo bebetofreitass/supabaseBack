@@ -30,25 +30,19 @@ Projeto criado para fins educacionais na disciplina **Desenvolvimento de Softwar
 git clone https://github.com/americosampaio-dev/supabaseBack.git
 cd supabaseBack
 2. Instale as dependências
-bash
-Copiar
-Editar
+
 npm install
 3. Configure suas credenciais do Supabase
 No arquivo app.js, substitua a URL e a chave anon do seu projeto Supabase:
 
 js
-Copiar
-Editar
 const supabase = createClient(
   'https://SUA-URL.supabase.co',
   'SUA-CHAVE-ANON'
 );
 4. Rode o servidor
-bash
-Copiar
-Editar
 node app.js
+
 🔌 Rotas da API
 Método	Rota	Ação
 GET	/products	Lista todos os produtos
@@ -59,8 +53,6 @@ DELETE	/products/:id	Deleta um produto
 
 📝 Exemplo de corpo (POST/PUT):
 json
-Copiar
-Editar
 {
   "name": "Teclado Gamer",
   "description": "Teclado mecânico RGB",
@@ -71,9 +63,11 @@ Baixe o Insomnia: https://insomnia.rest/download
 
 Crie requisições para as rotas acima
 
-Use o método correto e envie o JSON no corpo (para POST/PUT)
+Use o método correto e envie o JSON no corpo (para POST/PUT)```
 
 ---
+
+´´´bash
 
 # Deploy Backend Node.js na AWS EC2
 
@@ -116,9 +110,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install --lts
 
 5. Instalar Git
-sudo yum install -y git  # Amazon Linux
+sudo yum install -y git  Amazon Linux
 
-sudo apt install git -y  # Para Ubuntu
+sudo apt install git -y  Para Ubuntu
 
 Verifique a instalação:
 git --version
@@ -147,3 +141,5 @@ Para manter sua aplicação rodando após fechar o terminal:
 
 npm install -g pm2
 pm2 start app.js
+
+---
