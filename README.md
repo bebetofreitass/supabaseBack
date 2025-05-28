@@ -73,14 +73,77 @@ Crie requisições para as rotas acima
 
 Use o método correto e envie o JSON no corpo (para POST/PUT)
 
-👨‍🏫 Professor
-Américo Sampaio
+---
 
-📚 Disciplina
-Desenvolvimento de Software em Nuvem 
+# Deploy Backend Node.js na AWS EC2
 
-🧑‍💻 Autor
-[Carlos Alberto]
-RA: [2422750]
+Este guia descreve como configurar e rodar um backend Node.js utilizando o Express e Supabase em uma instância EC2 da AWS.
 
 ---
+
+## Pré-requisitos
+
+- Conta AWS com instância EC2 configurada
+- Par de chaves (.pem) para acesso SSH
+- IAM Role já criado (opcional)
+- Repositório backend no GitHub
+- O backend deve ter um `app.js` como ponto de entrada
+
+---
+
+## 1. Criar Instância EC2
+
+- Tipo: Amazon Linux 2 ou Ubuntu Server
+- Tipo de instância: t2.micro (free tier)
+- Associar par de chaves existente
+- Associar IAM Role (se necessário)
+- Configurar o grupo de segurança com:
+  - Porta **22** (SSH)
+  - Porta **3000** (HTTP da sua aplicação)
+
+---
+
+## 2. Acessar a Instância via SSH
+
+No terminal AWS:
+```bash
+3. Instalar NVM (Node Version Manager)
+sudo su
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+. ~/.nvm/nvm.sh
+
+4. Instalar Node.js (versão LTS)
+nvm install --lts
+
+5. Instalar Git
+sudo yum install -y git  # Amazon Linux
+
+sudo apt install git -y  # Para Ubuntu
+
+Verifique a instalação:
+git --version
+
+6. Clonar o Repositório do Projeto
+git clone https://github.com/seuusuario/seurepositorio.git
+cd "seurepositorio"
+
+7. Inicializar e Instalar Dependências
+npm init -y
+npm install express@4
+npm install @supabase/supabase-js
+npm install cors
+npm install morgan
+
+8. Iniciar a Aplicação
+node app.js
+A aplicação deve estar rodando na porta 3000.
+
+Acesse no navegador:
+http://<IP-PÚBLICO-DA-EC2>:3000
+
+---
+Dica Extra: Executar o servidor em segundo plano
+Para manter sua aplicação rodando após fechar o terminal:
+
+npm install -g pm2
+pm2 start app.js
